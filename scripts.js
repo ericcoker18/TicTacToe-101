@@ -51,6 +51,8 @@ const addMarker = (id) => {
   // document
   // .innerHTML 
 
+  document.getElementById(id).innerHTML = currentMarker
+
   changeMarker()
 }
 
@@ -64,8 +66,8 @@ const addMarker = (id) => {
 
 
 // This "changeMarker" function changes "X" to "O" in the "currentMarker" variable or "O" to "X"
-const changeMarker = () => {
-  if(currentMarker === "X"){
+function changeMarker() {
+  if (currentMarker === "X") {
     currentMarker = "O"
   } else {
     currentMarker = "X"
@@ -85,14 +87,16 @@ const changeMarker = () => {
 const resetBoard = () => {
   
   // @TODO-3: To make your "Restart" button work you'll need to build a line of code here that:
-      // collects all of the "td" elements into an HTML Collection: https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp  
-    
+          // collects all of the "td" elements into an HTML Collection: https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp  
+
   // @TODO-3.5: MIX & MATCH, You will need the following pieces of code to build that line:
   // squares
   // .getElementsByTagName("TD")
   // =
   // document
   // const
+
+  const squares = document.getElementsByTagName("TD")
   
   // loops over the HTML Collection of TDs and clears out the Xs and Os
   for (i=0; i < squares.length; i++) {
